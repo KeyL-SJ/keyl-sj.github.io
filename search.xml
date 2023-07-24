@@ -20,7 +20,13 @@
       
         <tags>
             
-            <tag> 通讯协议 STM32 UART Modbus </tag>
+            <tag> 通讯协议 </tag>
+            
+            <tag> STM32 </tag>
+            
+            <tag> UART </tag>
+            
+            <tag> Modbus </tag>
             
         </tags>
       
