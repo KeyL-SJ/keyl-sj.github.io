@@ -8,7 +8,7 @@
       <link href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
       <url>/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-I2C总线和通信协议"><a href="#1-I2C总线和通信协议" class="headerlink" title="1. I2C总线和通信协议"></a>1. I2C总线和通信协议</h2><h3 id="1-1-I2C总线结构"><a href="#1-1-I2C总线结构" class="headerlink" title="1.1 I2C总线结构"></a>1.1 I2C总线结构</h3><h3 id="1-2-I2C总线通信协议"><a href="#1-2-I2C总线通信协议" class="headerlink" title="1.2 I2C总线通信协议"></a>1.2 I2C总线通信协议</h3><h2 id="2-I2C的驱动程序"><a href="#2-I2C的驱动程序" class="headerlink" title="2. I2C的驱动程序"></a>2. I2C的驱动程序</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-I2C总线和通信协议"><a href="#1-I2C总线和通信协议" class="headerlink" title="1. I2C总线和通信协议"></a>1. I2C总线和通信协议</h2><p>​        I2C(Inter-Integrated Circuit)接口是一种<strong>串行数字总线接口</strong>。I2C接口只有2根信号线，总线上可以连接多个设备，硬件实现简单，可拓展性钱。I2C通信协议可以用普通GPIO引脚进行软件模拟。I2C接口主要用于<strong>通信速率要求不高，以及多个器件之间通信的应用场景。</strong></p><h3 id="1-1-I2C总线结构"><a href="#1-1-I2C总线结构" class="headerlink" title="1.1 I2C总线结构"></a>1.1 I2C总线结构</h3><p>​        一个器件的I2C接口只有2根信号线，即双向串行数据线SDA和时钟信号线SCL。I2C是一种多设备总线，一根总线上可以挂在多个设备。</p><p>I2C总线有如下特点：</p><ul><li></li><li></li></ul><h3 id="1-2-I2C总线通信协议"><a href="#1-2-I2C总线通信协议" class="headerlink" title="1.2 I2C总线通信协议"></a>1.2 I2C总线通信协议</h3><h2 id="2-I2C的驱动程序"><a href="#2-I2C的驱动程序" class="headerlink" title="2. I2C的驱动程序"></a>2. I2C的驱动程序</h2>]]></content>
       
       
       <categories>
