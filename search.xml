@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>I2C总线与通信协议</title>
+      <link href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/"/>
+      <url>/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-I2C总线和通信协议"><a href="#1-I2C总线和通信协议" class="headerlink" title="1. I2C总线和通信协议"></a>1. I2C总线和通信协议</h2><h3 id="1-1-I2C总线结构"><a href="#1-1-I2C总线结构" class="headerlink" title="1.1 I2C总线结构"></a>1.1 I2C总线结构</h3><h3 id="1-2-I2C总线通信协议"><a href="#1-2-I2C总线通信协议" class="headerlink" title="1.2 I2C总线通信协议"></a>1.2 I2C总线通信协议</h3><h2 id="2-I2C的驱动程序"><a href="#2-I2C的驱动程序" class="headerlink" title="2. I2C的驱动程序"></a>2. I2C的驱动程序</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 通讯协议 </tag>
+            
+            <tag> STM32 </tag>
+            
+            <tag> I2C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>双环控制PID算法</title>
       <link href="/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/"/>
       <url>/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/</url>
