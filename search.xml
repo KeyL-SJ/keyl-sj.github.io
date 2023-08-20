@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> STM32 </tag>
-            
             <tag> FreeRTOS </tag>
+            
+            <tag> STM32 </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> 通信协议 </tag>
-            
             <tag> STM32 </tag>
+            
+            <tag> 通信协议 </tag>
             
             <tag> I2C </tag>
             
@@ -103,9 +103,9 @@
       
         <tags>
             
-            <tag> 通信协议 </tag>
-            
             <tag> STM32 </tag>
+            
+            <tag> 通信协议 </tag>
             
             <tag> UART </tag>
             
