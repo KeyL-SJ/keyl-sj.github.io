@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>图片测试</title>
+      <link href="/2023/08/21/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/"/>
+      <url>/2023/08/21/%E5%9B%BE%E7%89%87%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图片显示"><a href="#图片显示" class="headerlink" title="图片显示"></a>图片显示</h1><p><img src="keyl-sj.github.io\source\_posts\图片测试\FreeRTOS_CubeMX配置.png" alt="FreeRTOS_CubeMX配置"></p><p><img src="keyl-sj.github.io\source\_posts\图片测试\FreeRTOS的文件组成.png" alt="FreeRTOS的文件组成"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>FreeRTOS学习笔记</title>
       <link href="/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
