@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>FreeRTOS学习笔记 | 林守拙的个人空间</title><meta name="author" content="林守拙"><meta name="copyright" content="林守拙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FreeRTOS学习笔记1、简介FreeRTOS 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。 FreeRTOS 的内核支持抢占式， 合作式和时间片调度。任务与任务、 任务与中断之间可以使用任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和互斥信">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>FreeRTOS学习笔记 | 林守拙的个人空间</title><meta name="author" content="林守拙"><meta name="copyright" content="林守拙"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FreeRTOS学习笔记 ¶1、简介 FreeRTOS 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。 FreeRTOS 的内核支持抢占式， 合作式和时间片调度。任务与任务、 任务与中断之间可以使用任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeRTOS学习笔记">
 <meta property="og:url" content="http://example.com/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="林守拙的个人空间">
-<meta property="og:description" content="FreeRTOS学习笔记1、简介FreeRTOS 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。 FreeRTOS 的内核支持抢占式， 合作式和时间片调度。任务与任务、 任务与中断之间可以使用任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和互斥信">
+<meta property="og:description" content="FreeRTOS学习笔记 ¶1、简介 FreeRTOS 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。 FreeRTOS 的内核支持抢占式， 合作式和时间片调度。任务与任务、 任务与中断之间可以使用任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/bingbing2_corrosion_port.jpg">
 <meta property="article:published_time" content="2023-08-16T14:07:49.000Z">
@@ -146,24 +146,33 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/bingbing2_corrosion_port.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/6.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="林守拙的个人空间"><span class="site-name">林守拙的个人空间</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">FreeRTOS学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-16T14:07:49.000Z" title="发表于 2023-08-16 22:07:49">2023-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-04T14:54:53.660Z" title="更新于 2023-09-04 22:54:53">2023-09-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>43分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="FreeRTOS学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="FreeRTOS学习笔记"><a href="#FreeRTOS学习笔记" class="headerlink" title="FreeRTOS学习笔记"></a>FreeRTOS学习笔记</h1><h2 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h2><p><strong>FreeRTOS</strong> 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。</p>
-<p><strong>FreeRTOS 的内核支持抢占式， 合作式和时间片调度。</strong>任务与任务、 任务与中断之间可以使用<strong>任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和互斥信号量进行通信和同步</strong>。</p>
-<h3 id="1-1-任务"><a href="#1-1-任务" class="headerlink" title="1.1 任务"></a>1.1 任务</h3><p><strong>RTOS 系统的核心就是任务管理， FreeRTOS 是一个抢占式的实时多任务系统</strong>， 其任务调度器也是<strong>抢占式</strong>的。<strong>高优先级的任务可以打断低优先级任务的运行</strong>而取得 CPU 的使用权，这样就保证了那些紧急任务的运行。 这样我们就可以为那些对实时性要求高的任务设置一个很高的优先级。 高优先级的任务执行完成以后重新把 CPU 的使用权归还给低优先级的任务，这个就是抢占式多任务系统的基本原理。</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/loading.gif" data-original="/img/bingbing2_corrosion_port.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/6.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="林守拙的个人空间"><span class="site-name">林守拙的个人空间</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">FreeRTOS学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-16T14:07:49.000Z" title="发表于 2023-08-16 22:07:49">2023-08-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-04T14:54:53.660Z" title="更新于 2023-09-04 22:54:53">2023-09-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">13.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>43分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="FreeRTOS学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>FreeRTOS学习笔记</h1>
+<h2 id="1、简介"><a class="header-anchor" href="#1、简介">¶</a>1、简介</h2>
+<p><strong>FreeRTOS</strong> 是一个 RTOS 类的嵌入式实时操作系统。它的社会占有量很高，许多半导体厂商产品的 SDK 包就使用 FreeRTOS 作为其操作系统，尤其是 WIFI、蓝牙这些带协议栈的芯片或模块。</p>
+<p><strong>FreeRTOS 的内核支持抢占式， 合作式和时间片调度。<strong>任务与任务、 任务与中断之间可以使用</strong>任务通知、消息队列、二值信号量、数值型信号量、 递归互斥信号量和互斥信号量进行通信和同步</strong>。</p>
+<h3 id="1-1-任务"><a class="header-anchor" href="#1-1-任务">¶</a>1.1 任务</h3>
+<p><strong>RTOS 系统的核心就是任务管理， FreeRTOS 是一个抢占式的实时多任务系统</strong>， 其任务调度器也是<strong>抢占式</strong>的。<strong>高优先级的任务可以打断低优先级任务的运行</strong>而取得 CPU 的使用权，这样就保证了那些紧急任务的运行。 这样我们就可以为那些对实时性要求高的任务设置一个很高的优先级。 高优先级的任务执行完成以后重新把 CPU 的使用权归还给低优先级的任务，这个就是抢占式多任务系统的基本原理。</p>
 <p><strong>在使用 RTOS 的时候一个实时应用可以作为一个独立的任务</strong>。每个任务都有自己的运行环境， 不依赖于系统中其他的任务或者 RTOS 调度器。 <strong>任何一个时间点只能有一个任务运行，具体运行哪个任务是由 RTOS 调度器来决定的</strong>， RTOS 调度器因此就会重复的开启、关闭每个任务。</p>
 <p>任务不需要了解 RTOS 调度器的具体行为， RTOS 调度器的职责是确保当一个任务开始执行的时候其上下文环境(寄存器值，堆栈内容等)和任务上一次退出的时候相同。 为了做到这一点，<strong>每个任务都必须有个堆栈，当任务切换的时候将上下文环境保存在堆栈中</strong>，这样当任务再次执行的时候就可以从堆栈中取出上下文环境， 任务恢复运行。</p>
-<h3 id="1-2-任务状态"><a href="#1-2-任务状态" class="headerlink" title="1.2 任务状态"></a>1.2 任务状态</h3><p><strong>FreeRTOS 中的任务永远处于下面几个状态中的某一个：</strong></p>
+<h3 id="1-2-任务状态"><a class="header-anchor" href="#1-2-任务状态">¶</a>1.2 任务状态</h3>
+<p><strong>FreeRTOS 中的任务永远处于下面几个状态中的某一个：</strong></p>
 <ul>
-<li><strong>运行态</strong><br>   当一个任务正在运行时， 那么就说这个任务处于运行态， 处于运行态的任务就是当前正在使用处理器的任务。 如果使用的是单核处理器的话那么不管在任何时刻永远都只有一个任务处于运行态。</li>
-<li><strong>就绪态</strong><br>  处于就绪态的任务是那些已经准备就绪(这些任务没有被阻塞或者挂起)， 可以运行的任务，但是<strong>处于就绪态的任务还没有运行，因为有一个同优先级或者更高优先级的任务正在运行！</strong></li>
-<li><strong>阻塞态</strong><br>  <strong>如果一个任务当前正在等待某个外部事件的话就说它处于阻塞态</strong>， 比如说如果某个任务调用了函数 vTaskDelay()的话就会进入阻塞态， 直到延时周期完成。<strong>任务在等待队列、信号量、事件组、通知或互斥信号量的时候也会进入阻塞态。</strong>任务进入阻塞态会有一个超时时间，当超过这个超时时间任务就会退出阻塞态，即使所等待的事件还没有来临！</li>
-<li><strong>挂起态</strong><br>  像阻塞态一样，任务进入挂起态以后也不能被调度器调用进入运行态， 但是<strong>进入挂起态的任务没有超时时间</strong>。任务进入和退出挂起态通过调用函数 <code>vTaskSuspend()</code>和 <code>xTaskResume()</code>。</li>
+<li><strong>运行态</strong><br>
+  当一个任务正在运行时， 那么就说这个任务处于运行态， 处于运行态的任务就是当前正在使用处理器的任务。 如果使用的是单核处理器的话那么不管在任何时刻永远都只有一个任务处于运行态。</li>
+<li><strong>就绪态</strong><br>
+  处于就绪态的任务是那些已经准备就绪(这些任务没有被阻塞或者挂起)， 可以运行的任务，但是<strong>处于就绪态的任务还没有运行，因为有一个同优先级或者更高优先级的任务正在运行！</strong></li>
+<li><strong>阻塞态</strong><br>
+  <strong>如果一个任务当前正在等待某个外部事件的话就说它处于阻塞态</strong>， 比如说如果某个任务调用了函数 vTaskDelay()的话就会进入阻塞态， 直到延时周期完成。**任务在等待队列、信号量、事件组、通知或互斥信号量的时候也会进入阻塞态。**任务进入阻塞态会有一个超时时间，当超过这个超时时间任务就会退出阻塞态，即使所等待的事件还没有来临！</li>
+<li><strong>挂起态</strong><br>
+  像阻塞态一样，任务进入挂起态以后也不能被调度器调用进入运行态， 但是<strong>进入挂起态的任务没有超时时间</strong>。任务进入和退出挂起态通过调用函数 <code>vTaskSuspend()</code>和 <code>xTaskResume()</code>。</li>
 </ul>
-<h3 id="1-3-任务优先级"><a href="#1-3-任务优先级" class="headerlink" title="1.3 任务优先级"></a>1.3 任务优先级</h3><p>每 个 任 务 都 可 以 分 配 一 个 从 <code>0 ~ configMAX_PRIORITIES-1</code> 的 优 先 级 ，<code>configMAX_PRIORITIES</code>在文件<code>FreeRTOSConfig.h</code> 中有定义。</p>
+<h3 id="1-3-任务优先级"><a class="header-anchor" href="#1-3-任务优先级">¶</a>1.3 任务优先级</h3>
+<p>每 个 任 务 都 可 以 分 配 一 个 从 <code>0 ~ configMAX_PRIORITIES-1</code> 的 优 先 级 ，<code>configMAX_PRIORITIES </code>在文件<code> FreeRTOSConfig.h</code> 中有定义。</p>
 <p>FreeRTOS 调度器确保处于就绪态或运行态的高优先级的任务获取处理器使用权，换句话说就是处于就绪态的最高优先级的任务才会运行。<strong>当宏<code>configUSE_TIME_SLICING</code>定义为 1 的时候多个任务可以共用一个优先级，数量不限</strong>。默认情况下宏<code>configUSE_TIME_SLICING</code>在文件<code>FreeRTOS.h</code>中已经定义为 1。此时处于就绪态的优先级相同的任务就会使用时间片轮转调度器获取运行时间。</p>
-<h3 id="1-4-内核配置"><a href="#1-4-内核配置" class="headerlink" title="1.4 内核配置"></a>1.4 内核配置</h3><ul>
+<h3 id="1-4-内核配置"><a class="header-anchor" href="#1-4-内核配置">¶</a>1.4 内核配置</h3>
+<ul>
 <li><strong>内核配置一</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -206,11 +215,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>内核配置二</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -257,11 +264,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>内存管理</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -284,11 +289,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>任务运行信息获取配置</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -307,15 +310,13 @@
 </tr>
 <tr>
 <td style="text-align:center"><code>USE_STATS_FORMATTING_FUNCTIONS</code></td>
-<td style="text-align:center">用户配置宏定义<code>configUSE_TRACE_FACILITY</code> 和<code>configUSE_STATS_FORMATTING_FUNCTIONS</code>都为 1 的时候，将使能函数 <code>vTaskList()</code> 和 <code>vTaskGetRunTimeStats()</code>，如果两者中任何一个为 0，那么这两个函数都将被禁能</td>
+<td style="text-align:center">用户配置宏定义<code> configUSE_TRACE_FACILITY</code> 和<code>configUSE_STATS_FORMATTING_FUNCTIONS</code>都为 1 的时候，将使能函数 <code>vTaskList()</code> 和 <code>vTaskGetRunTimeStats()</code>，如果两者中任何一个为 0，那么这两个函数都将被禁能</td>
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>软件定时器</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -330,11 +331,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>中断优先级</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -353,11 +352,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ul>
 <li><strong>函数Include配置</strong></li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -440,9 +437,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="2、CubeMX项目配置实现LED灯翻转"><a href="#2、CubeMX项目配置实现LED灯翻转" class="headerlink" title="2、CubeMX项目配置实现LED灯翻转"></a>2、CubeMX项目配置实现LED灯翻转</h2><p>在组件面板的Middleware组里，有FreeRTOS，启用FreeRTOS并进行模式和参数设置，如下如所示：</p>
-<p><img src="/img/loading.gif" data-original="FreeRTOS_CubeMX配置.png" alt="FreeRTOS_CubeMX配置"></p>
+<h2 id="2、CubeMX项目配置实现LED灯翻转"><a class="header-anchor" href="#2、CubeMX项目配置实现LED灯翻转">¶</a>2、CubeMX项目配置实现LED灯翻转</h2>
+<p>在组件面板的Middleware组里，有FreeRTOS，启用FreeRTOS并进行模式和参数设置，如下如所示：</p>
+<p><img src="/img/loading.gif" data-original="FreeRTOS_CubeMX%E9%85%8D%E7%BD%AE.png" alt="FreeRTOS_CubeMX配置"></p>
 <p>在模式设置(Mode)部分，只有一个参数Interface，其右下拉列表框中有3个选项：</p>
 <ul>
 <li>Disable，表示不适用FreeRTOS。</li>
@@ -462,22 +459,25 @@
 <li>User Constants，用户常数。用户自定义常数的设置。</li>
 </ul>
 <p>这几个页面的设置涉及FreeRTOS中的一些主要功能的使用，列如任务、信号量、互斥量等。现在，先保持FreeRTOS的所有参数设置为默认值。</p>
-<p><strong>在FreeRTOS中，用户至少需要创建一个任务。CubeMX在启用FreeRTOS时，就定义了一个默认的任务。</strong>任务名称时defaultTask，任务函数名称是StartDefaultTask，这个任务的所有设置暂时保持默认值。</p>
-<p><img src="/img/loading.gif" data-original="CubeMX中定义的默认任务.png" alt="CubeMX中定义的默认任务"></p>
+<p>**在FreeRTOS中，用户至少需要创建一个任务。CubeMX在启用FreeRTOS时，就定义了一个默认的任务。**任务名称时defaultTask，任务函数名称是StartDefaultTask，这个任务的所有设置暂时保持默认值。</p>
+<p><img src="/img/loading.gif" data-original="CubeMX%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E9%BB%98%E8%AE%A4%E4%BB%BB%E5%8A%A1.png" alt="CubeMX中定义的默认任务"></p>
 <p>在完成设置之后，若是字节生成项目代码，会弹出弹窗：</p>
-<p><img src="/img/loading.gif" data-original="提示在使用FreeRTOS时不要使用SysTick定时器作为HAL基础时钟源.png" alt="提示在使用FreeRTOS时不要使用SysTick定时器作为HAL基础时钟源"></p>
+<p><img src="/img/loading.gif" data-original="%E6%8F%90%E7%A4%BA%E5%9C%A8%E4%BD%BF%E7%94%A8FreeRTOS%E6%97%B6%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8SysTick%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BD%9C%E4%B8%BAHAL%E5%9F%BA%E7%A1%80%E6%97%B6%E9%92%9F%E6%BA%90.png" alt="提示在使用FreeRTOS时不要使用SysTick定时器作为HAL基础时钟源"></p>
 <p>它提示在<strong>使用FreeRTOS时，应该使用一个独立的定时器HAL基础时钟源，而不是使用SysTick定时器。</strong></p>
 <p>返回<code>SYS</code>组件的模式设置，设置<code>Timebase Source</code>为某个定时器，这个默认定时器是<code>SysTick</code>，<strong>在使用FreeRTOS的时候，FreeRTOS会将SysTick用作基础时钟，所以需要设置一个定时器作为HAL的基础时钟。</strong></p>
-<p><img src="/img/loading.gif" data-original="SYS组件的模式设置.png" alt="SYS组件的模式设置"></p>
+<p><img src="/img/loading.gif" data-original="SYS%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A8%A1%E5%BC%8F%E8%AE%BE%E7%BD%AE.png" alt="SYS组件的模式设置"></p>
 <p>再次生成工程文件，就没有弹窗了。</p>
-<h3 id="2-1、程序分析"><a href="#2-1、程序分析" class="headerlink" title="2.1、程序分析"></a>2.1、程序分析</h3><h4 id="2-1-1-主程序"><a href="#2-1-1-主程序" class="headerlink" title="2.1.1. 主程序"></a>2.1.1. 主程序</h4><p>生成的工程主函数代码如下：</p>
+<h3 id="2-1、程序分析"><a class="header-anchor" href="#2-1、程序分析">¶</a>2.1、程序分析</h3>
+<h4 id="2-1-1-主程序"><a class="header-anchor" href="#2-1-1-主程序">¶</a>2.1.1. 主程序</h4>
+<p>生成的工程主函数代码如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cmsis_os.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gpio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">SystemClock_Config</span><span class="params">(<span class="type">void</span>)</span>; <span class="comment">/*!&lt; 系统时钟配置 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">MX_FREERTOS_Init</span><span class="params">(<span class="type">void</span>)</span>;   <span class="comment">/*!&lt; FreeRTOS对象初始化函数 */</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  HAL_Init();</span><br><span class="line">  SystemClock_Config();</span><br><span class="line">  MX_GPIO_Init();</span><br><span class="line"> </span><br><span class="line">  osKernelInitialize(); <span class="comment">/*!&lt; 初始化FreeRTOS的调度器 */</span></span><br><span class="line">  MX_FREERTOS_Init();   <span class="comment">/*!&lt; FreeRTOS对象初始化函数 */</span></span><br><span class="line">  osKernelStart();      <span class="comment">/*!&lt; 启动FreeRTOS的任务调度器 */</span></span><br><span class="line">    </span><br><span class="line">  <span class="comment">/*!&lt; 程序无法运行到这里，因为RTOS的任务调度器接管了系统的控制 */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码的最开始还是调用函数<code>HAL_Init()</code>进行初始化。<code>HAL_Init()</code>内部会调用函数<code>HAL_InitTick()</code>对HAL基础时钟进行初始化。</p>
 <p><strong>默认情况下，HAL基础时钟源使用SysTick定时器</strong>，在使用定时器TIM6作为HAL时钟源后，CubeMX在生成代码是创建了一个文件<code>stm32f1xx_hal_timebase_tim.c</code>，在这个文件中重新实现了函数<code>HAL_InitTick</code>，<strong>对TIM6进行初始化，使用TIM6生成HAL的滴答时钟信号</strong>。</p>
 <p><strong>系统和外设初始化完成之后，调用函数<code>osKernelInitialize()</code>进行FreeRTOS调度器的初始化。</strong></p>
 <p>函数<code>MX_FREERTOS_Init()</code>是FreeRTOS中创建对象的初始化函数，这个函数在<code>freertos.c</code>中实现。<em>注意：文件<code>freertos.c</code>没有对应的头文件<code>freertos.h</code>，所以在文件<code>main.c</code>的私有函数原型定义部分，声明了这个函数的原型。</em> <strong>函数<code>MX_FREERTOS_Init()</code>的主要功能是创建用户定义的任务、信号量、队列等在FreeRTOS中用到的对象。</strong></p>
 <p>之后调用了<code>osKernelStart()</code>，这是<code>CMSIS-RTOS</code>标准接口函数，其内部调用FreeRTOS的函数<code>vTaskStartScheduler()</code>，功能是启动FreeRTOS内核的任务调度器。<em>执行了这个函数之后，FreeRTOS就接管了系统的控制权，处理去循环执行FreeRTOS中各个任务的代码，FreeRTOS进行任务调度与其他功能管理。</em> <strong>处理器不会执行<code>osKernelStart()</code>之后的代码行，也不会执行main()函数最后的while()最后的while()循环里的代码。</strong></p>
-<h4 id="2-1-2-FreeRTOS对象初始化函数和任务创建"><a href="#2-1-2-FreeRTOS对象初始化函数和任务创建" class="headerlink" title="2.1.2. FreeRTOS对象初始化函数和任务创建"></a>2.1.2. FreeRTOS对象初始化函数和任务创建</h4><p><strong>函数<code>MX_FREERTOS_Init()</code>是CubeMX生成的文件<code>freertos.c</code>中的一个函数，用于创建FreeRTOS中的任务、信号量、队列等对象</strong>。FreeRTOS要运行起来，必须创建至少一个任务。应用程序中需要用户编写的涉及FreeRTOS操作的代码，主要写在这个文件里面。</p>
+<h4 id="2-1-2-FreeRTOS对象初始化函数和任务创建"><a class="header-anchor" href="#2-1-2-FreeRTOS对象初始化函数和任务创建">¶</a>2.1.2. FreeRTOS对象初始化函数和任务创建</h4>
+<p><strong>函数<code>MX_FREERTOS_Init()</code>是CubeMX生成的文件<code>freertos.c</code>中的一个函数，用于创建FreeRTOS中的任务、信号量、队列等对象</strong>。FreeRTOS要运行起来，必须创建至少一个任务。应用程序中需要用户编写的涉及FreeRTOS操作的代码，主要写在这个文件里面。</p>
 <p>文件<code>freertos.c</code>没有对应的头文件<code>freertos.h</code>。文件<code>freertos.c</code>初始化代码如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;FreeRTOS.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;task.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cmsis_os.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Definitions for defaultTask */</span></span><br><span class="line">osThreadId_t defaultTaskHandle;	<span class="comment">//任务defaultTask的句柄函数</span></span><br><span class="line"><span class="comment">//任务defaultTask的属性</span></span><br><span class="line"><span class="type">const</span> osThreadAttr_t defaultTask_attributes = &#123;</span><br><span class="line">  .name = <span class="string">&quot;defaultTask&quot;</span>,	<span class="comment">//任务的注释名称</span></span><br><span class="line">  .stack_size = <span class="number">128</span> * <span class="number">4</span>,	<span class="comment">//栈储存空间大小，即128x4=512字节</span></span><br><span class="line">  .priority = (osPriority_t) osPriorityNormal,	<span class="comment">//任务优先级</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">StartDefaultTask</span><span class="params">(<span class="type">void</span> *argument)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">MX_FREERTOS_Init</span><span class="params">(<span class="type">void</span>)</span>; <span class="comment">/* (MISRA C 2004 rule 8.1) */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * @brief  FreeRTOS initialization</span></span><br><span class="line"><span class="comment">  * @param  None</span></span><br><span class="line"><span class="comment">  * @retval None</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">MX_FREERTOS_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE END Init */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_MUTEX */</span></span><br><span class="line">  <span class="comment">/* add mutexes(互斥量), ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_MUTEX */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_SEMAPHORES */</span></span><br><span class="line">  <span class="comment">/* add semaphores(信号量), ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_SEMAPHORES */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_TIMERS */</span></span><br><span class="line">  <span class="comment">/* start timers, add new ones, ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_TIMERS */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_QUEUES */</span></span><br><span class="line">  <span class="comment">/* add queues(队列), ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_QUEUES */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Create the thread(s) */</span></span><br><span class="line">  <span class="comment">/* creation of defaultTask */</span></span><br><span class="line">  defaultTaskHandle = osThreadNew(StartDefaultTask, <span class="literal">NULL</span>, &amp;defaultTask_attributes);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_THREADS */</span></span><br><span class="line">  <span class="comment">/* add threads(任务), ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_THREADS */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN RTOS_EVENTS */</span></span><br><span class="line">  <span class="comment">/* add events, ... */</span></span><br><span class="line">  <span class="comment">/* USER CODE END RTOS_EVENTS */</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 任务defaultTask的任务函数 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StartDefaultTask</span><span class="params">(<span class="type">void</span> *argument)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN StartDefaultTask */</span></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="keyword">for</span>(;;)</span><br><span class="line">  &#123;</span><br><span class="line">    osDelay(<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END StartDefaultTask */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到在程序开头部分定义了一个<code>osThreadId_t</code>类型的变量<code>defaultTaskHandle</code>。<code>osThreadId_t</code>类型实际上是void类型指针，是文件<code>cmsis_0s.h</code>中的一个类型定义。</p>
@@ -503,7 +503,7 @@
 <p>表示任务属性的结构体<code>osThreadAttr_t</code>的定义如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="type">const</span> <span class="type">char</span>                   *name;	<span class="comment">//任务的名称，只用于备注</span></span><br><span class="line">  <span class="type">uint32_t</span>                 attr_bits;	<span class="comment">//属性位</span></span><br><span class="line">  <span class="type">void</span>                      *cb_mem;	<span class="comment">//用于控制块的存储空间</span></span><br><span class="line">  <span class="type">uint32_t</span>                   cb_size;	<span class="comment">//控制块存储空间的大小，单位：字</span></span><br><span class="line">  <span class="type">void</span>                   *stack_mem;	<span class="comment">//栈的存储空间</span></span><br><span class="line">  <span class="type">uint32_t</span>                stack_size;	<span class="comment">//栈存储空间的大小，单位：字</span></span><br><span class="line">  osPriority_t              priority;	<span class="comment">//任务的初始化优先级，默认值：osPriorityNormal</span></span><br><span class="line">  TZ_ModuleId_t            tz_module;	<span class="comment">//TrustZone模块标识符</span></span><br><span class="line">  <span class="type">uint32_t</span>                  reserved;	<span class="comment">//保留变量，必须是0</span></span><br><span class="line">&#125; osThreadAttr_t;</span><br></pre></td></tr></table></figure>
 <p>CubeMX中对任务属性的配置窗口如下：</p>
-<p><img src="/img/loading.gif" data-original="CubeMX中的Edit Task对话框.png" alt="CubeMX中的Edit Task对话框"></p>
+<p>![CubeMX中的Edit Task对话框](./FreeRTOS学习笔记/CubeMX中的Edit Task对话框.png)</p>
 <p>图中显示的任务属性参数作用解释如下：</p>
 <ul>
 <li><code>Task Name</code>：任务名称，仅用于备注；</li>
@@ -513,13 +513,15 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">defaultTask_attributes.stack_size = <span class="number">128</span> * <span class="number">4</span>;	<span class="comment">//栈存储空间大小，即128x4=512字节</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>Entry Function</code>：入口函数。也就是任务函数。一个任务就是一个内部有是循环的函数，如<code>StartDefaultTask</code>。<strong>任务函数名称不是结构体<code>osThreadAttr_t</code>的成员变量，而是任务创建函数<code>osThreadNew()</code>的参数</strong>。</li>
-<li><code>Code Generation Option</code>：生成代码的选项。有<code>Default</code>和<code>As weak</code>两个选项。<ul>
+<li><code>Code Generation Option</code>：生成代码的选项。有<code>Default</code>和<code>As weak</code>两个选项。
+<ul>
 <li><strong>如果选择<code>As weak</code>，就是任务函数定义成一个弱函数，也就是函数名前面有修饰符<code>__weak</code>。</strong></li>
 <li><strong>选择<code>Default</code>就是生成正常的函数。</strong></li>
 </ul>
 </li>
 <li><code>Parameter</code>：参数。为任务函数传递的参数，如果不需要传递参数，就设置为<code>NULL</code>。</li>
-<li><code>Allocation</code>：<strong>内存分配方式。是指任务的栈和控制块内存的分配方式</strong>，选项包括<code>Dynamic</code>和<code>Static</code>。<ul>
+<li><code>Allocation</code>：<strong>内存分配方式。是指任务的栈和控制块内存的分配方式</strong>，选项包括<code>Dynamic</code>和<code>Static</code>。
+<ul>
 <li><strong><code>Dynamic</code>表示由<code>osTreadNew()</code>函数内部为任务动态创建栈存储空间<code>stack_mem</code>和任务控制块存储空间<code>cb_mem</code></strong>。</li>
 <li><strong>如果选择为<code>Static</code>，则需要在调用<code>osThreadNew()</code>之前，为<code>stack_mem</code>和<code>cb_mem</code>赋值，即静态分配内存</strong>。</li>
 </ul>
@@ -533,21 +535,24 @@
 <li>动态分配任务时，调用函数<code>xTaskCreate()</code>创建任务；</li>
 <li>静态分配内存时，调用函数<code>xTaskCreateStatic()</code>创建任务。</li>
 </ul>
-<h4 id="2-1-3-编写任务功能实现代码"><a href="#2-1-3-编写任务功能实现代码" class="headerlink" title="2.1.3. 编写任务功能实现代码"></a>2.1.3. 编写任务功能实现代码</h4><p>编写示例，使<code>LED0</code>间隔500ms翻转，任务函数<code>StartDefaultTask()</code>，代码如下：</p>
+<h4 id="2-1-3-编写任务功能实现代码"><a class="header-anchor" href="#2-1-3-编写任务功能实现代码">¶</a>2.1.3. 编写任务功能实现代码</h4>
+<p>编写示例，使<code>LED0</code>间隔500ms翻转，任务函数<code>StartDefaultTask()</code>，代码如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* USER CODE END Header_StartDefaultTask */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">StartDefaultTask</span><span class="params">(<span class="type">void</span> *argument)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN StartDefaultTask */</span></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="keyword">for</span>(;;)</span><br><span class="line">  &#123;</span><br><span class="line">    HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);</span><br><span class="line">    osDelay(<span class="number">500</span>); <span class="comment">/*!&lt; 延时500个tick(时钟节拍) */</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END StartDefaultTask */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在for循环中，使用的延时函数时<code>osDelay()</code>，这是<code>CMSIS-RTOS</code>标准接口函数，内部调用FreeRTOS的延时函数<code>vTaskDelay()</code>，延时单位时时钟节拍(tick)。<strong>FreeRTOS的基础时钟产生的滴答信号周期是1ms，所以一个节拍就是1ms</strong>。</p>
 <p>在FreeRTOS的任务管理中，延时函数<code>vTaskDelay()</code>是非常重要的。任务函数的主体一般就是一个死循环，<strong>任务函数在执行延时函数<code>vTaskDelay()</code>时，会交出CPU的使用权，由FreeRTOS进行任务调度，使其他任务可以获取CPU的使用权，否则，高优先级任务将总是占用CPU，其他任务无法执行</strong>。</p>
-<h2 id="3、FreeRTOS的文件组成和基本原理"><a href="#3、FreeRTOS的文件组成和基本原理" class="headerlink" title="3、FreeRTOS的文件组成和基本原理"></a>3、FreeRTOS的文件组成和基本原理</h2><h3 id="3-1-FreeRTOS文件组成"><a href="#3-1-FreeRTOS文件组成" class="headerlink" title="3.1 FreeRTOS文件组成"></a>3.1 FreeRTOS文件组成</h3><p>在上面的LED灯示例中，与FreeRTOS相关的程序文件主要分为<strong>可修改的用户程序文件</strong>和<strong>不可修改的FreeRTOS源程序文件</strong>。前面介绍的<code>freertos.c</code>是可修改的用户程序文件，FreeRTOS中任务、信号量等对象的创建，用户任务函数都在这个文件里面实现。</p>
+<h2 id="3、FreeRTOS的文件组成和基本原理"><a class="header-anchor" href="#3、FreeRTOS的文件组成和基本原理">¶</a>3、FreeRTOS的文件组成和基本原理</h2>
+<h3 id="3-1-FreeRTOS文件组成"><a class="header-anchor" href="#3-1-FreeRTOS文件组成">¶</a>3.1 FreeRTOS文件组成</h3>
+<p>在上面的LED灯示例中，与FreeRTOS相关的程序文件主要分为<strong>可修改的用户程序文件</strong>和<strong>不可修改的FreeRTOS源程序文件</strong>。前面介绍的<code>freertos.c</code>是可修改的用户程序文件，FreeRTOS中任务、信号量等对象的创建，用户任务函数都在这个文件里面实现。</p>
 <p>项目中FreeRTOS的源程序文件都在目录<code>\Middlewares\Third_Party\FreeRTOS\Source</code>下，这些是针对选择的MCU信号做好了移植的文件。<em>使用CubeMX生成代码时，用户无需关心FreeRTOS的移植问题，所需的源程序文件也为用户组织好了</em>。</p>
 <p>FreeRTOS的源程序文件大致可以分为5类，如下所示：</p>
-<p><img src="/img/loading.gif" data-original="FreeRTOS的文件组成.png" alt="FreeRTOS的文件组成"></p>
+<p><img src="/img/loading.gif" data-original="FreeRTOS%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%84%E6%88%90.png" alt="FreeRTOS的文件组成"></p>
 <p>用户配置和程序文件有两个文件，用于对FreeRTOS进行各种配置和功能裁剪，以及实现用户任务的功能。</p>
 <ul>
 <li>文件<code>FreeRTOSConfig.h</code>，是对FreeRTOS进行各种配置的文件，<strong>FreeRTOS的功能裁剪就是通过这个文件里面的各种宏定义实现的</strong>。</li>
 <li>文件<code>freertos.c</code>包含FreeRTOS对象初始化函数<code>MX_FREERTOS_Init()</code>和任务函数，<strong>是编写用户代码的主要文件</strong>。</li>
 </ul>
-<h4 id="3-1-1-FreeRTOS通用功能文件"><a href="#3-1-1-FreeRTOS通用功能文件" class="headerlink" title="3.1.1 FreeRTOS通用功能文件"></a>3.1.1 FreeRTOS通用功能文件</h4><p>这些是实现FreeRTOS的任务、队列、信号量、软件定时器、事件组等通用功能文件，这些功能与硬件无关。在一个嵌入式操作系统中，任务管理是必须的，某些功能是在用到时才需要加入的，如事件组、软件定时器、信号量、流缓冲区等。CubeMX在生成代码时，将这些文件全部复制到了项目里，但是它不会编译到最终的二进制文件里。用户可以对FreeRTOS的各种参数进行配置，实现功能剪裁，这些参数配置其实就是各种条件编译的条件定义。</p>
-<div class="table-container">
+<h4 id="3-1-1-FreeRTOS通用功能文件"><a class="header-anchor" href="#3-1-1-FreeRTOS通用功能文件">¶</a>3.1.1 FreeRTOS通用功能文件</h4>
+<p>这些是实现FreeRTOS的任务、队列、信号量、软件定时器、事件组等通用功能文件，这些功能与硬件无关。在一个嵌入式操作系统中，任务管理是必须的，某些功能是在用到时才需要加入的，如事件组、软件定时器、信号量、流缓冲区等。CubeMX在生成代码时，将这些文件全部复制到了项目里，但是它不会编译到最终的二进制文件里。用户可以对FreeRTOS的各种参数进行配置，实现功能剪裁，这些参数配置其实就是各种条件编译的条件定义。</p>
 <table>
 <thead>
 <tr>
@@ -594,12 +599,12 @@
 </tr>
 <tr>
 <td style="text-align:left"><code>mpu_prototypes.h</code><br><code>mpu_wrappers.h</code></td>
-<td>MPU(内存保护单元)功能的头文件。该文件定义的函数是在标准函数前面增加前缀”MPU_”，当应用程序使用MPU功能时，FreeRTOS内核会优先执行此文件中的函数。</td>
+<td>MPU(内存保护单元)功能的头文件。该文件定义的函数是在标准函数前面增加前缀&quot;MPU_&quot;，当应用程序使用MPU功能时，FreeRTOS内核会优先执行此文件中的函数。</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="3-1-2-FreeRTOS通用定义文件"><a href="#3-1-2-FreeRTOS通用定义文件" class="headerlink" title="3.1.2 FreeRTOS通用定义文件"></a>3.1.2 FreeRTOS通用定义文件</h4><p>在工程目录<code>FreeRTOS\Source\include</code>下有几个与硬件不管的通用定义文件。</p>
+<h4 id="3-1-2-FreeRTOS通用定义文件"><a class="header-anchor" href="#3-1-2-FreeRTOS通用定义文件">¶</a>3.1.2 FreeRTOS通用定义文件</h4>
+<p>在工程目录<code>FreeRTOS\Source\include</code>下有几个与硬件不管的通用定义文件。</p>
 <p><strong>文件<code>FreeRTOS.h</code>。这个文件包含FreeRTOS的默认宏定义、数据类型定义、接口函数定义等</strong>。FreeRTOS.h中有些默认的用于FreeRTOS功能裁剪的宏定义，例如：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> configIDLE_SHOULD_YIELD</span></span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> configIDLE_SHOULD_YIELD 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> INCLUDE_vTaskDelete</span></span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> INCLUDE_vTaskDelete 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 <p><strong>FreeRTOS的功能裁剪就是通过这些宏定义实现的，这些用于配置的宏定义主要分为以下两类</strong>。</p>
@@ -610,7 +615,6 @@
 <p>在FreeRTOS中，这些宏定义通常称为参数，因为它们决定了系统的一些特性。<strong>文件<code>FreeRTOS.h</code>包含系统默认的一些参数的宏定义，不要直接修改此文件的内容</strong>。用户可以修改的配置文件是<code>FreeRTOSConfig.h</code>，这个文件也包含大量前缀为<code>config</code>和<code>INCLUDE_</code>的宏定义。<strong>如果文件<code>FreeRTOSConfig.h</code>中没有定义某个宏，就使用文件FreeRTOS.h中的默认定义</strong>。</p>
 <p>FreeRTOS的大部分功能配置都可以通过CubeMX可视化设置完成，并生成文件<code>FreeRTOSConfig.h</code>中的宏定义代码。</p>
 <p>文件<code>projdefs.h</code>。这个文件包含FreeRTOS中的一些通用定义，如错误编号宏定义，逻辑值的宏定义等。文件<code>projdefs.h</code>中常用的几个宏定义及其功能如下：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -647,17 +651,18 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>文件<code>stack_macros.h</code>和<code>StackMacros.h</code>。这两个文件的内容完全一样，只是为了向后兼容，才出现了两个文件。这两个文件定义了进行栈溢出检查的函数，如果要使用栈溢出检查功能，需要设置参数<code>configCHECK_FOR_STACK_OVERFLOW</code>的值为1或2。</p>
-<h4 id="3-1-3-CMSIS-RTOS标准接口文件"><a href="#3-1-3-CMSIS-RTOS标准接口文件" class="headerlink" title="3.1.3 CMSIS-RTOS标准接口文件"></a>3.1.3 CMSIS-RTOS标准接口文件</h4><p>目录<code>\FreeRTOS\Source\CMSIS_RTOS_V2\</code>下是<code>CMSIS-RTOS</code>标准接口文件，如下图所示：</p>
-<p><img src="/img/loading.gif" data-original="CMSIS-RTOS标准接口文件.png" alt="CMSIS-RTOS标准接口文件"></p>
+<h4 id="3-1-3-CMSIS-RTOS标准接口文件"><a class="header-anchor" href="#3-1-3-CMSIS-RTOS标准接口文件">¶</a>3.1.3 CMSIS-RTOS标准接口文件</h4>
+<p>目录<code>\FreeRTOS\Source\CMSIS_RTOS_V2\</code>下是<code>CMSIS-RTOS</code>标准接口文件，如下图所示：</p>
+<p><img src="/img/loading.gif" data-original="CMSIS-RTOS%E6%A0%87%E5%87%86%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6.png" alt="CMSIS-RTOS标准接口文件"></p>
 <p>这些文件里的宏定义、数据类型、函数名称等前缀都是<code>os</code>。原理上来说，这些函数和数据类型的名称与具体的RTOS无关，它们是<code>CMSIS-RTOS</code>标准的定义。在具体实现上，这些前缀为<code>os</code>的函数调用具体移植的RTOS的实现函数，<strong>例如，若移植的是FreeRTOS，<code>os</code>函数就调用FreeRTOS的实现函数，若移植的是uC/OS-Ⅱ，<code>os</code>函数就调用uC/OS-Ⅱ的实现函数</strong>。</p>
 <p>我们移植的是FreeRTOS，所以<code>os</code>函数就调用FreeRTOS的实现函数。例如，CMSIS-RTOS的延时函数<code>osDelay()</code>的内部就是调用了FreeRTOS的延时函数<code>vTaskDelay()</code>，其完整源代码如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">osStatus_t <span class="title function_">osDelay</span> <span class="params">(<span class="type">uint32_t</span> ticks)</span> &#123;</span><br><span class="line">  osStatus_t stat;</span><br><span class="line">  <span class="keyword">if</span> (IS_IRQ()) &#123;</span><br><span class="line">    stat = osErrorISR;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    stat = osOK;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (ticks != <span class="number">0U</span>) &#123;</span><br><span class="line">      vTaskDelay(ticks);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> (stat);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em>在LED翻转的示例中，就有一些类似的<code>os</code>函数：<code>osThreadNew()</code>的内部调用<code>xTaskCreate()</code>或<code>xTaskCreateStatic()</code>创建任务；<code>osKernelStart()</code>的内部调用<code>vTaskStartScheduler()</code>启动FreeRTOS内核运行。</em></p>
 <p>从原理上来说，如果在程序中使用这些<code>CMSIS-RTOS</code>标准接口函数和类型定义，可以减少与具体RTOS的关联。例如，一个应用程序原先是使用FreeRTOS写的，后来要改用其他的实时操作系统，则只需改RTOS移植部分的程序，而无需修改应用程序。但是这种情况可能极少。</p>
-<h4 id="3-1-4-硬件相关的移植文件"><a href="#3-1-4-硬件相关的移植文件" class="headerlink" title="3.1.4 硬件相关的移植文件"></a>3.1.4 硬件相关的移植文件</h4><p>硬件相关的移植文件就是需要根据硬件类型进行改写的文件，一个移植好的版本成为一个端口(port)，这些文件在目录<code>\FreeRTOS\Source\portable</code>下，又分为处理器架构与编译器文件、内存管理文件两个部分，如下所示：</p>
-<p><img src="/img/loading.gif" data-original="硬件相关移植文件.png" alt="硬件相关移植文件"></p>
+<h4 id="3-1-4-硬件相关的移植文件"><a class="header-anchor" href="#3-1-4-硬件相关的移植文件">¶</a>3.1.4 硬件相关的移植文件</h4>
+<p>硬件相关的移植文件就是需要根据硬件类型进行改写的文件，一个移植好的版本成为一个端口(port)，这些文件在目录<code>\FreeRTOS\Source\portable</code>下，又分为处理器架构与编译器文件、内存管理文件两个部分，如下所示：</p>
+<p><img src="/img/loading.gif" data-original="%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3%E7%A7%BB%E6%A4%8D%E6%96%87%E4%BB%B6.png" alt="硬件相关移植文件"></p>
 <p>由于我在工程中生成了<code>Keil</code>和<code>IAR</code>两个工程文件，故架构与编译器的文件夹就有两个。其中：</p>
 <ul>
 <li><code>IAR</code>文件夹中为<code>IAR</code>工程的处理器架构与编译器文件</li>
@@ -672,15 +677,18 @@
 <p>另外，在文件<code>portmacro.h</code>中，FreeRTOS还重新定义了一些基础的数据类型的类型符号，定义的代码如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> portCHAR		char</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portFLOAT		float</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portDOUBLE		double</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portLONG		long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portSHORT		short</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portSTACK_TYPE	uint32_t</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> portBASE_TYPE	long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> portSTACK_TYPE StackType_t;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> BaseType_t;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> UBaseType_t;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">if</span>( configUSE_16_BIT_TICKS == 1 )</span></span><br><span class="line">	<span class="keyword">typedef</span> <span class="type">uint16_t</span> TickType_t;</span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> portMAX_DELAY ( TickType_t ) 0xffff</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="keyword">typedef</span> <span class="type">uint32_t</span> TickType_t;</span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> portMAX_DELAY ( TickType_t ) 0xffffffffUL</span></span><br></pre></td></tr></table></figure>
 <p>其中，因为<code>Cortex-M3</code>是32位处理器，所以<code>configUSE_16_BIT_TICKS == 0</code></p>
-<ol>
+<ol start="2">
 <li><strong>内存管理相关文件</strong></li>
 </ol>
 <p>内存管理涉及内存动态分配和释放等操作，与具体的处理器密切相关。FreeRTOS提供5种内存管理方案，即<code>heap1~heap5</code>，在CubeMX中设置FreeRTOS参数时选择一种即可。CubeMX生成的默认的内存管理方案。</p>
 <p>文件<code>heap_4.c</code>实现了动态分配内存的函数<code>pvPortMalloc()</code>，释放内存的函数<code>vPortFree()</code>，以及其他几个函数。</p>
-<h3 id="3-2-FreeRTOS的编码规则"><a href="#3-2-FreeRTOS的编码规则" class="headerlink" title="3.2 FreeRTOS的编码规则"></a>3.2 FreeRTOS的编码规则</h3><p>FreeRTOS的核心源程序文件遵循一套编码规则，其变量命名、函数命名、宏定义命名等都有规律，知道这些规律有助于理解函数名、宏定义的意义。</p>
-<h4 id="3-2-1-变量名"><a href="#3-2-1-变量名" class="headerlink" title="3.2.1 变量名"></a>3.2.1 变量名</h4><p>变量名适用类型前缀。通过变量名的前缀，用户可以知道变量的类型。</p>
+<h3 id="3-2-FreeRTOS的编码规则"><a class="header-anchor" href="#3-2-FreeRTOS的编码规则">¶</a>3.2 FreeRTOS的编码规则</h3>
+<p>FreeRTOS的核心源程序文件遵循一套编码规则，其变量命名、函数命名、宏定义命名等都有规律，知道这些规律有助于理解函数名、宏定义的意义。</p>
+<h4 id="3-2-1-变量名"><a class="header-anchor" href="#3-2-1-变量名">¶</a>3.2.1 变量名</h4>
+<p>变量名适用类型前缀。通过变量名的前缀，用户可以知道变量的类型。</p>
 <ul>
-<li><p>对于<code>stdint.h</code>中定义的各种标准类型整数</p>
+<li>
+<p>对于<code>stdint.h</code>中定义的各种标准类型整数</p>
 <ul>
 <li>前缀<code>c</code>表示<code>char</code>类型变量，前缀<code>s</code>表示<code>int16_t(short)</code>类型变量</li>
 <li>前缀<code>l</code>表示<code>int32_t</code>类型变量。对于无符号<code>uinsigned</code>整数</li>
@@ -688,22 +696,28 @@
 <li><code>us</code>表示<code>uint16_t</code>，<code>ul</code>表示<code>uint32_t</code>类型。</li>
 </ul>
 </li>
-<li><p><code>BaseType_t</code>和所有其他非标准类型的变量名，如结构体变量、任务句柄、队列句柄等都用前缀<code>x</code>。</p>
+<li>
+<p><code>BaseType_t</code>和所有其他非标准类型的变量名，如结构体变量、任务句柄、队列句柄等都用前缀<code>x</code>。</p>
 </li>
-<li><code>UBaseType_t</code>类型的变量使用前缀<code>ux</code>。</li>
-<li>指针类型变量在前面再增加一个<code>p</code>，例如<code>pc</code>表示<code>char*</code>类型。</li>
+<li>
+<p><code>UBaseType_t</code>类型的变量使用前缀<code>ux</code>。</p>
+</li>
+<li>
+<p>指针类型变量在前面再增加一个<code>p</code>，例如<code>pc</code>表示<code>char*</code>类型。</p>
+</li>
 </ul>
-<h4 id="3-2-2-函数名"><a href="#3-2-2-函数名" class="headerlink" title="3.2.2 函数名"></a>3.2.2 函数名</h4><p>函数名的前缀由<strong>返回值类型</strong>和<strong>函数所在文件</strong>组成，若返回值位<code>void</code>类型，则类型前缀时<code>v</code>。举例如下：</p>
+<h4 id="3-2-2-函数名"><a class="header-anchor" href="#3-2-2-函数名">¶</a>3.2.2 函数名</h4>
+<p>函数名的前缀由<strong>返回值类型</strong>和<strong>函数所在文件</strong>组成，若返回值位<code>void</code>类型，则类型前缀时<code>v</code>。举例如下：</p>
 <ul>
 <li>函数<code>xTaskCreate()</code>，其返回值位BaseType_t类型，在文件<code>task.h</code>中定义。</li>
 <li>函数<code>vQueueDelete()</code>，其返回值位<code>void</code>，在文件<code>queue.h</code>中定义。</li>
 <li>函数<code>pcTimerGetName()</code>，其返回值位<code>char*</code>，在文件<code>timer.h</code>中定义。</li>
 <li>函数<code>pvPortMalloc()</code>，其返回值位<code>void*</code>，在文件<code>portable.h</code>中定义。</li>
 </ul>
-<p>​        如果函数是用<code>static</code>声明的文件内使用的私有函数，则其前缀位<code>prv</code>，例如：<code>tasks.c</code>文件中函数<code>prvAddNewTaskToReadyList()</code>，因为私有函数不会被外部调用，所以函数名中就不用包括返回值类型和所在文件的前缀了。</p>
-<p>​        <code>CMSIS-RTOS</code>相关文件中定义的函数前缀都是<code>os</code>，不包括返回值类型和所在文件的前缀。例如，<code>cmsis_os2.h</code>中的函数<code>osThreadNew()</code>、<code>osDelay()</code>等。</p>
-<h4 id="3-2-3-宏名称"><a href="#3-2-3-宏名称" class="headerlink" title="3.2.3 宏名称"></a>3.2.3 宏名称</h4><p>宏定义和宏函数的名称一般用大写字母，并使用小写字母前缀表示红的功能分组。FreeRTOS中常用的宏名称如下：</p>
-<div class="table-container">
+<p>​		如果函数是用<code>static</code>声明的文件内使用的私有函数，则其前缀位<code>prv</code>，例如：<code>tasks.c</code>文件中函数<code>prvAddNewTaskToReadyList()</code>，因为私有函数不会被外部调用，所以函数名中就不用包括返回值类型和所在文件的前缀了。</p>
+<p>​		<code>CMSIS-RTOS</code>相关文件中定义的函数前缀都是<code>os</code>，不包括返回值类型和所在文件的前缀。例如，<code>cmsis_os2.h</code>中的函数<code>osThreadNew()</code>、<code>osDelay()</code>等。</p>
+<h4 id="3-2-3-宏名称"><a class="header-anchor" href="#3-2-3-宏名称">¶</a>3.2.3 宏名称</h4>
+<p>宏定义和宏函数的名称一般用大写字母，并使用小写字母前缀表示红的功能分组。FreeRTOS中常用的宏名称如下：</p>
 <table>
 <thead>
 <tr>
@@ -764,15 +778,16 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="3-3-FreeRTOS的配置和功能裁剪"><a href="#3-3-FreeRTOS的配置和功能裁剪" class="headerlink" title="3.3 FreeRTOS的配置和功能裁剪"></a>3.3 FreeRTOS的配置和功能裁剪</h3><p>FreeRTOS的配置和功能裁剪主要是通过文件<code>FreeRTOSConfig.h</code>和<code>FreeRTOS.h</code>中的宏定义实现的</p>
+<h3 id="3-3-FreeRTOS的配置和功能裁剪"><a class="header-anchor" href="#3-3-FreeRTOS的配置和功能裁剪">¶</a>3.3 FreeRTOS的配置和功能裁剪</h3>
+<p>FreeRTOS的配置和功能裁剪主要是通过文件<code>FreeRTOSConfig.h</code>和<code>FreeRTOS.h</code>中的宏定义实现的</p>
 <ul>
 <li><strong>前缀为<code>config</code>的宏用于配置FreeRTOS的一些参数</strong></li>
 <li><strong>前缀为<code>INCLUDE_</code>的宏用于控制是否编译某些函数的源代码</strong>。</li>
 </ul>
 <p><em>文件<code>FreeRTOS.h</code>中的宏定义是系统默认的宏定义，请勿直接修改。</em><code>FreeRTOSConfig.h</code>是用户可修改的配置文件，如果一个宏没有在文件<code>FreeRTOSConfig.h</code>中重定义，就是用文件<code>FreeRTOS.h</code>中的默认定义。</p>
 <p>在CubeMX中，FreeRTOS的配置界面中有<code>Config parameters</code>和<code>Include parameters</code>两个页面，用于对这两类宏进行设置。</p>
-<h4 id="3-3-1-config类的宏"><a href="#3-3-1-config类的宏" class="headerlink" title="3.3.1 config类的宏"></a>3.3.1 <code>config</code>类的宏</h4><p><strong>前缀为<code>config</code>的宏用于配置FreeRTOS的一些参数</strong>。LED翻转示例中，完全使用了FreeRTOS的默认配置，其宏定义代码定义如下：</p>
+<h4 id="3-3-1-config类的宏"><a class="header-anchor" href="#3-3-1-config类的宏">¶</a>3.3.1 <code>config</code>类的宏</h4>
+<p><strong>前缀为<code>config</code>的宏用于配置FreeRTOS的一些参数</strong>。LED翻转示例中，完全使用了FreeRTOS的默认配置，其宏定义代码定义如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_PREEMPTION                     1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configSUPPORT_STATIC_ALLOCATION          1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configSUPPORT_DYNAMIC_ALLOCATION         1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_IDLE_HOOK                      0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TICK_HOOK                      0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configCPU_CLOCK_HZ                       ( SystemCoreClock )</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTICK_RATE_HZ                       ((TickType_t)1000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configMAX_PRIORITIES                     ( 56 )</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configMINIMAL_STACK_SIZE                 ((uint16_t)128)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTOTAL_HEAP_SIZE                    ((size_t)3072)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configMAX_TASK_NAME_LEN                  ( 16 )</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TRACE_FACILITY                 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_16_BIT_TICKS                   0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_MUTEXES                        1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configQUEUE_REGISTRY_SIZE                8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_RECURSIVE_MUTEXES              1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_COUNTING_SEMAPHORES            1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_PORT_OPTIMISED_TASK_SELECTION  0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Co-routine definitions. */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_CO_ROUTINES                    0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configMAX_CO_ROUTINE_PRIORITIES          ( 2 )</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Software timer definitions. */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configUSE_TIMERS                         1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_TASK_PRIORITY                ( 2 )</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_QUEUE_LENGTH                 10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configTIMER_TASK_STACK_DEPTH             256</span></span><br></pre></td></tr></table></figure>
 <p>在CubeMX中修改了值的参数都会在文件<code>FreeRTOConfig.h</code>中生成语句。有默认值的宏定义在文件<code>FreeRTOS.h</code>中，例如，文件<code>FreeRTOS.h</code>中有如下的定义：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> configIDLE_SHOULD_YIELD</span></span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> configIDLE_SHOULD_YIELD		1</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
@@ -782,11 +797,10 @@
 <ol>
 <li><code>Kernel settings</code>：内核设置，是FreeRTOS内核的一些参数，设置的具体参数及其默认值如下：</li>
 </ol>
-<p><img src="/img/loading.gif" data-original="FreeRTOS内核设置.png" alt="FreeRTOS内核设置"></p>
+<p><img src="/img/loading.gif" data-original="FreeRTOS%E5%86%85%E6%A0%B8%E8%AE%BE%E7%BD%AE.png" alt="FreeRTOS内核设置"></p>
 <p>其中一些参数是不允许修改的，就显示为灰色字体。一些参数只能选择一个参数值，例如，<code>USE_MUTEXES</code>只能选择<code>Enable</code>。</p>
 <p>CubeMX中<code>Kernel settings</code>页面的参数与<code>FreeRTOSConfig.h</code>或<code>FreeRTOS.h</code>中的宏是对应的，只是去掉了前缀<code>config</code>，如<code>USE_PREEMPTION</code>对应的宏是<code>configUSE_PREEMPTION</code>。界面中逻辑型参数的可选值是<code>Enable</code>和<code>Disable</code>，对应宏定义的值是1和0，这些宏一般是条件编译的条件，用于条件编译某一段代码。</p>
 <p><code>Kernel settings</code>页面中的参数的意义和默认值如下表所示：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -888,14 +902,15 @@
 </tr>
 </tbody>
 </table>
-</div>
-<ol>
-<li><p><code>Memory management settings</code>：内存管理设置。内存管理的参数设置界面如下图所示，只有三个参数。</p>
-<p> <img src="/img/loading.gif" data-original="内存管理的参数设置界面.png" alt="内存管理的参数设置界面"></p>
+<ol start="2">
+<li>
+<p><code>Memory management settings</code>：内存管理设置。内存管理的参数设置界面如下图所示，只有三个参数。</p>
+<p><img src="/img/loading.gif" data-original="%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="内存管理的参数设置界面"></p>
 </li>
 </ol>
 <ul>
-<li><p><code>Memory Allocation</code>：内存分配方式，固定为<code>Dynamic/Static</code>，也就是同时支持动态分配和静态分配。这个参数对应于文件<code>FreeRTOSConfig.h</code>中的两个宏。</p>
+<li>
+<p><code>Memory Allocation</code>：内存分配方式，固定为<code>Dynamic/Static</code>，也就是同时支持动态分配和静态分配。这个参数对应于文件<code>FreeRTOSConfig.h</code>中的两个宏。</p>
   <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> configSUPPORT_STATIC_ALLOCATION          1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> configSUPPORT_DYNAMIC_ALLOCATION         1</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -903,22 +918,60 @@
 <ul>
 <li><code>TOTAL_HEAP_SIZE</code>：FreeRTOS总的堆空间大小，设置范围为<code>512B~128KB</code>.FreeRTOS中创建的所有对象，如任务、队列、软件定时器、信号量、互斥量等，都需要从FreeRTOS的堆空间分配内存。在CubeMX中，<code>FreeRTOS Heap Usage</code>页面显示了当前配置下，FreeRTOS的堆空间使用情况，如下图所示。界面中显示了剩余的可用内存，以及各个任务、各种对象使用的内存量。</li>
 </ul>
-<p><img src="/img/loading.gif" data-original="FreeRTOS_Heap_Usage页面显示堆空间使用信息.png" alt="FreeRTOS Heap Usage页面显示堆空间使用信息"></p>
+<p><img src="/img/loading.gif" data-original="FreeRTOS_Heap_Usage%E9%A1%B5%E9%9D%A2%E6%98%BE%E7%A4%BA%E5%A0%86%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E4%BF%A1%E6%81%AF.png" alt="FreeRTOS Heap Usage页面显示堆空间使用信息"></p>
 <ul>
-<li><p><code>Memory Management scheme</code>：内存管理方案。有5种可选的内存管理方案，从<code>heap_1</code>到<code>heap_5</code>，使用哪种方案，就在文件<code>FreeRTOSConfig.h</code>中生成对应那种方案的宏定义。例如，使用方案<code>heap_4</code>，生成的宏定义如下：</p>
+<li>
+<p><code>Memory Management scheme</code>：内存管理方案。有5种可选的内存管理方案，从<code>heap_1</code>到<code>heap_5</code>，使用哪种方案，就在文件<code>FreeRTOSConfig.h</code>中生成对应那种方案的宏定义。例如，使用方案<code>heap_4</code>，生成的宏定义如下：</p>
   <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> USE_FreeRTOS_HEAP_4</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<ol>
-<li><p><code>Hook function related definitions</code>：钩子函数相关定义，钩子函数类似回调函数，就是在某个功能或函数执行时要调用的一个函数。钩子函数的代码由用户编写，用于实现一些自定义的处理。钩子函数的数字界面如下图所示：</p>
-<p> <img src="/img/loading.gif" data-original="钩子函数的设置界面.png" alt="钩子函数的设置界面"></p>
-<p> 默认情况下，这些参数值都是<code>Disable</code>，也就是不实现相应的钩子函数。如果设置<code>Enabled</code>，CubeMX会在文件<code>freertos.c</code>中自动生成相应钩子函数的函数框架。</p>
-<p> <code>Hook function related definitions</code>各个参数意义以及设置为<code>Enabled</code>时对应的钩子函数名称如下：</p>
-<p> | 钩子函数配置参数               | 调用场合                               | 对应的钩子函数名称                    |<br> | ——————————————— | ——————————————————— | ——————————————————- |<br> | <code>USE_IDLE_HOOK</code>                | 空闲任务里调用                         | <code>vApplicationIdleHook()</code>              |<br> | <code>USE_TICK_HOOK</code>                | 滴答定时器中断服务函数里调用           | <code>vApplicationTickHook()</code>              |<br> | <code>USE_MALLOC_FAILED_HOOK</code>       | 使用<code>pvPortMalloc()</code>分配内存失败时调用 | <code>vApplicationMallocFaileHook()</code>       |<br> | <code>USE_DAEMON_TASK_STARTUP_HOOK</code> | 守护(Daemon)任务启动时调用             | <code>vApplicationDaemonTaskStartupHook()</code> |<br> | <code>CHECK_FOR_STACK_OVERFLOW</code>     | 栈溢出时调用                           | <code>vApplicationStackOverflowHook()</code>     |</p>
-<p> 其中<code>CHECK_FOR_STACK_OVERFLOW</code>的选项比较特殊，它提供<code>Option1</code>和<code>Option2</code>两个选项，对应与FreeRTOS内部两种不同的栈溢出处理方法，但是对应的钩子函数名称是相同的。 </p>
+<ol start="3">
+<li>
+<p><code>Hook function related definitions</code>：钩子函数相关定义，钩子函数类似回调函数，就是在某个功能或函数执行时要调用的一个函数。钩子函数的代码由用户编写，用于实现一些自定义的处理。钩子函数的数字界面如下图所示：</p>
+<p><img src="/img/loading.gif" data-original="%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="钩子函数的设置界面"></p>
+<p>默认情况下，这些参数值都是<code>Disable</code>，也就是不实现相应的钩子函数。如果设置<code>Enabled</code>，CubeMX会在文件<code>freertos.c</code>中自动生成相应钩子函数的函数框架。</p>
+<p><code>Hook function related definitions</code>各个参数意义以及设置为<code>Enabled</code>时对应的钩子函数名称如下：</p>
+<table>
+<thead>
+<tr>
+<th>钩子函数配置参数</th>
+<th>调用场合</th>
+<th>对应的钩子函数名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>USE_IDLE_HOOK</code></td>
+<td>空闲任务里调用</td>
+<td><code>vApplicationIdleHook()</code></td>
+</tr>
+<tr>
+<td><code>USE_TICK_HOOK</code></td>
+<td>滴答定时器中断服务函数里调用</td>
+<td><code>vApplicationTickHook()</code></td>
+</tr>
+<tr>
+<td><code>USE_MALLOC_FAILED_HOOK</code></td>
+<td>使用<code>pvPortMalloc()</code>分配内存失败时调用</td>
+<td><code>vApplicationMallocFaileHook()</code></td>
+</tr>
+<tr>
+<td><code>USE_DAEMON_TASK_STARTUP_HOOK</code></td>
+<td>守护(Daemon)任务启动时调用</td>
+<td><code>vApplicationDaemonTaskStartupHook()</code></td>
+</tr>
+<tr>
+<td><code>CHECK_FOR_STACK_OVERFLOW</code></td>
+<td>栈溢出时调用</td>
+<td><code>vApplicationStackOverflowHook()</code></td>
+</tr>
+</tbody>
+</table>
+<p>其中<code>CHECK_FOR_STACK_OVERFLOW </code>的选项比较特殊，它提供<code>Option1</code>和<code>Option2</code>两个选项，对应与FreeRTOS内部两种不同的栈溢出处理方法，但是对应的钩子函数名称是相同的。</p>
 </li>
-<li><p><code>Run time and task stats gathering related definitions</code>：运行时间和任务状态收集相关定义。FreeRTOS可以收集任务运行时间和任务状态信息，相关参数如下图所示：</p>
-<p> <img src="/img/loading.gif" data-original="运行时间和任务状态收集相关定义.png" alt="运行时间和任务状态收集相关定义"></p>
+<li>
+<p><code>Run time and task stats gathering related definitions</code>：运行时间和任务状态收集相关定义。FreeRTOS可以收集任务运行时间和任务状态信息，相关参数如下图所示：</p>
+<p><img src="/img/loading.gif" data-original="%E8%BF%90%E8%A1%8C%E6%97%B6%E9%97%B4%E5%92%8C%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81%E6%94%B6%E9%9B%86%E7%9B%B8%E5%85%B3%E5%AE%9A%E4%B9%89.png" alt="运行时间和任务状态收集相关定义"></p>
 </li>
 </ol>
 <ul>
@@ -926,12 +979,14 @@
 <li><code>USE_TRACE_FACILITY</code>：若设置为<code>Enabled</code>，则会增加一些结构体成员和函数，用于可视化和跟踪调试。</li>
 <li><code>USE_STATS_FORMATTING_FUNCTIONS</code>：若<code>USE_TRACE_FACILITY</code>和这个参数都设置为<code>Enabled</code>，则会编译函数<code>vTaskList()</code>和<code>vTaskGetRunTimeStats()</code>。这两个参数中只要有一个设置为<code>Disabled</code>，就不会编译这个函数。</li>
 </ul>
-<ol>
-<li><p><code>Co-routine related definitions</code>：协程相关定义。使用协程可以节省内存，主要用于功能有限、内存很小的MCU。现在的MCU内存一般比较充足，就很少使用协程了，所以禁用此功能即可。</p>
-<p> <img src="/img/loading.gif" data-original="协程相关定义.png" alt="协程相关定义"></p>
+<ol start="5">
+<li>
+<p><code>Co-routine related definitions</code>：协程相关定义。使用协程可以节省内存，主要用于功能有限、内存很小的MCU。现在的MCU内存一般比较充足，就很少使用协程了，所以禁用此功能即可。</p>
+<p><img src="/img/loading.gif" data-original="%E5%8D%8F%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%AE%9A%E4%B9%89.png" alt="协程相关定义"></p>
 </li>
-<li><p><code>Software timer definitions</code>：软件定时器定义。FreeRTOS可以创建软件定时器，其功能类似于高级语言(如C++)中的软件定时器。软件定时器相关参数的设置界面如下图所示：</p>
-<p> <img src="/img/loading.gif" data-original="软件定时器相关参数的设置界面.png" alt="软件定时器相关参数的设置界面"></p>
+<li>
+<p><code>Software timer definitions</code>：软件定时器定义。FreeRTOS可以创建软件定时器，其功能类似于高级语言(如C++)中的软件定时器。软件定时器相关参数的设置界面如下图所示：</p>
+<p><img src="/img/loading.gif" data-original="%E8%BD%AF%E4%BB%B6%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0%E7%9A%84%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="软件定时器相关参数的设置界面"></p>
 </li>
 </ol>
 <ul>
@@ -940,12 +995,14 @@
 <li><code>TIMER_QUEUE_LENGTH</code>：定时器指令队列的长度，设置范围是1到255。</li>
 <li><code>TIMER-TASK_STACK_DEPTH</code>：定时器服务任务的栈空间大小，默认值256个字，设置范围是128到32768个字。<strong>注意，栈空间的单位是字，而不是字节</strong>。</li>
 </ul>
-<ol>
-<li><p><code>Interrupt nesting behaviour configuration</code>：中断嵌套行为配置。如下图所示：</p>
-<p> <img src="/img/loading.gif" data-original="中断嵌套行为配置.png" alt="中断嵌套行为配置"></p>
+<ol start="7">
+<li>
+<p><code>Interrupt nesting behaviour configuration</code>：中断嵌套行为配置。如下图所示：</p>
+<p><img src="/img/loading.gif" data-original="%E4%B8%AD%E6%96%AD%E5%B5%8C%E5%A5%97%E8%A1%8C%E4%B8%BA%E9%85%8D%E7%BD%AE.png" alt="中断嵌套行为配置"></p>
 </li>
 </ol>
-<h4 id="3-3-2-INCLUDE-类的宏"><a href="#3-3-2-INCLUDE-类的宏" class="headerlink" title="3.3.2 INCLUDE_类的宏"></a>3.3.2 INCLUDE_类的宏</h4><p>前缀为<code>INCLUDE_</code>的宏，用作一些函数的条件编译的条件，控制是否编译这些函数的源代码，从而实现对FreeRTOS的功能裁剪。不编译应用程序中用不到的FreeRTOS API函数，可以使最终编译出的程序尽量小。</p>
+<h4 id="3-3-2-INCLUDE-类的宏"><a class="header-anchor" href="#3-3-2-INCLUDE-类的宏">¶</a>3.3.2 INCLUDE_类的宏</h4>
+<p>前缀为<code>INCLUDE_</code>的宏，用作一些函数的条件编译的条件，控制是否编译这些函数的源代码，从而实现对FreeRTOS的功能裁剪。不编译应用程序中用不到的FreeRTOS API函数，可以使最终编译出的程序尽量小。</p>
 <p>在文件<code>FreeRTOSConfig</code>和<code>FreeRTOS.h</code>中，都有<code>INCLUDE_</code>类的宏定义。与<code>config_</code>类的宏定义一样，文件<code>FreeRTOS.h</code>中的是默认的宏定义，例如，文件<code>FreeRTOS.h</code>中有如下的定义：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> INCLUDE_vTaskDelete</span></span><br><span class="line">	<span class="meta">#<span class="keyword">define</span> INCLUDE_vTaskDelete 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 <p>这表示如果没有宏定义<code>INCLUDE_vTaskDelete</code>，就将这个宏定义为0。文件<code>FreeRTOS.h</code>中的定义是默认定义，<strong>请勿直接修改文件<code>FreeRTOS.h</code>里的内容</strong>。</p>
@@ -956,17 +1013,21 @@
 <p>有些函数代码的编译条件还是多个参数的组合，例如，函数<code>eTaskGetState()</code>的编译条件如下：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">if</span>( ( INCLUDE_eTaskGetState == 1 ) || ( configUSE_TRACE_FACILITY == 1 ) )</span></span><br><span class="line">	eTaskState <span class="title function_">eTaskGetState</span><span class="params">( TaskHandle_t xTask )</span></span><br><span class="line">	&#123;</span><br><span class="line">        .......</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* INCLUDE_eTaskGetState */</span></span></span><br></pre></td></tr></table></figure>
 <p>在CubeMX的FreeRTOS配置部分，<code>Include parameters</code>页面用于设置<code>INCLUDE_</code>类宏的值，如下图所示：</p>
-<p><img src="/img/loading.gif" data-original="Include_parameters设置界面.png" alt="Include parameters设置界面"></p>
-<h2 id="4、FreeRTOS的任务管理"><a href="#4、FreeRTOS的任务管理" class="headerlink" title="4、FreeRTOS的任务管理"></a>4、FreeRTOS的任务管理</h2><p> 一个嵌入式操作系统的核心功能就是多任务管理系统，<strong>FreeRTOS的任务调度器具有基于优先级的抢占式任务调度方式</strong>，能满足实时性的要求。下面，将简单介绍FreeRTOS的多任务运行原理，各种任务调度方法的特点与应用。</p>
-<h3 id="4-1-任务相关的一些概念"><a href="#4-1-任务相关的一些概念" class="headerlink" title="4.1 任务相关的一些概念"></a>4.1 任务相关的一些概念</h3><h4 id="4-1-1-多任务运行基本机制"><a href="#4-1-1-多任务运行基本机制" class="headerlink" title="4.1.1 多任务运行基本机制"></a>4.1.1 多任务运行基本机制</h4><p><strong>在FreeRTOS中，一个任务就是实现某种功能的一个函数</strong>，任务函数的内部一般有一个死循环结构。在<strong>任何时候都不允许从任务函数退出，也就是不能出现<code>return</code>语句</strong>。<u>如果需要结束任务，在任务函数里，可以跳出死循环，然后使用函数<code>vTaskDelete()</code>删除任务自己，也可以在其他任务里调用函数<code>vTaskDelete()</code>删除这个任务。</u></p>
+<p><img src="/img/loading.gif" data-original="Include_parameters%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2.png" alt="Include parameters设置界面"></p>
+<h2 id="4、FreeRTOS的任务管理"><a class="header-anchor" href="#4、FreeRTOS的任务管理">¶</a>4、FreeRTOS的任务管理</h2>
+<p>一个嵌入式操作系统的核心功能就是多任务管理系统，<strong>FreeRTOS的任务调度器具有基于优先级的抢占式任务调度方式</strong>，能满足实时性的要求。下面，将简单介绍FreeRTOS的多任务运行原理，各种任务调度方法的特点与应用。</p>
+<h3 id="4-1-任务相关的一些概念"><a class="header-anchor" href="#4-1-任务相关的一些概念">¶</a>4.1 任务相关的一些概念</h3>
+<h4 id="4-1-1-多任务运行基本机制"><a class="header-anchor" href="#4-1-1-多任务运行基本机制">¶</a>4.1.1 多任务运行基本机制</h4>
+<p><strong>在FreeRTOS中，一个任务就是实现某种功能的一个函数</strong>，任务函数的内部一般有一个死循环结构。在<strong>任何时候都不允许从任务函数退出，也就是不能出现<code>return</code>语句</strong>。<u>如果需要结束任务，在任务函数里，可以跳出死循环，然后使用函数<code>vTaskDelete()</code>删除任务自己，也可以在其他任务里调用函数<code>vTaskDelete()</code>删除这个任务。</u></p>
 <p>在FreeRTOS里，用户可以创建多个任务。每个任务需要分配一个栈(stack)空间和一个任务控制块(Task Control Block,TCB)空间。每个任务还需要设定一个优先级，优先级的数字越小，表示优先级越低。</p>
 <p>在单核处理器上，任何时刻只能有一个任务占用CPU并运行。但是在FreeRTOS系统上，运行多个任务时，运行起来却好像多个任务在同时运行，这是由于RTOS的任务调度使得多个任务对CPU实现了<strong>分时复用功能。</strong></p>
-<p><img src="/img/loading.gif" data-original="最简单的基于时间片的多任务运行原理.png" alt="最简单的基于时间片的多任务运行原理"></p>
+<p><img src="/img/loading.gif" data-original="%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%89%87%E7%9A%84%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86.png" alt="最简单的基于时间片的多任务运行原理"></p>
 <p>上图所示是最简单的基于时间片的多任务运行原理。假设只有两个任务，并且任务Task1和Task2具有相同的优先级。圆周表示CPU时间，如同钟表的一周，RTOS将CPU时间分成基本的时间片(time slice)，例如，<strong>FreeRTOS默认的时间片长度是1ms，也就是SysTick定时器的定时周期</strong>。在一个时间片内，会有一个任务占用CPU并执行，假设当前运行的任务是Task1。在一个时间片结束时(实际就是SysTick定时器发生中断时)进行任务调度，由于Task1和Task2具有相同的优先级，RTOS会将CPU使用权交给Task2。<strong>Task1交出CPU使用权时，会将CPU的当前场景(CPU各个核心寄存器的值)压入自己的栈空间，而Task2获取CPU使用权时，会用自己栈空间保存的数据恢复CPU场景，因而Task2可以从上次运行的状态继续运行</strong>。</p>
 <p>基于时间片的多任务调度就是这样控制多个同等优先级任务实现CPU的分时复用，从而实现多任务运行的。因为时间片的长度很短(默认是1ms)，任务切换速度很快，所以程序运行时，给用户的感觉就像是同时在运行。</p>
 <p>当多个任务的优先级不同时，FreeRTOS还会使用基于优先级的抢占式任务调度方法，每个人物获得的CPU使用时间长度是不同的。</p>
-<h4 id="4-1-2-任务的状态"><a href="#4-1-2-任务的状态" class="headerlink" title="4.1.2 任务的状态"></a>4.1.2 任务的状态</h4><p>由单核CPU的多任务运行机制可知，任何时刻，只能由一个任务占用CPU并运行，这个任务的状态成为运行(running)状态，其它未占用CPU的任务的状态都可称为非运行(not running)状态。非运行状态又可以细分为3个状态（挂起状态、就绪状态、阻塞状态），任务的各个状态的切换如下所示：</p>
-<p><img src="/img/loading.gif" data-original="任务的状态以及状态之间的转换.png" alt="任务的状态以及状态之间的转换"></p>
+<h4 id="4-1-2-任务的状态"><a class="header-anchor" href="#4-1-2-任务的状态">¶</a>4.1.2 任务的状态</h4>
+<p>由单核CPU的多任务运行机制可知，任何时刻，只能由一个任务占用CPU并运行，这个任务的状态成为运行(running)状态，其它未占用CPU的任务的状态都可称为非运行(not running)状态。非运行状态又可以细分为3个状态（挂起状态、就绪状态、阻塞状态），任务的各个状态的切换如下所示：</p>
+<p><img src="/img/loading.gif" data-original="%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8A%B6%E6%80%81%E4%BB%A5%E5%8F%8A%E7%8A%B6%E6%80%81%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2.png" alt="任务的状态以及状态之间的转换"></p>
 <p>FreeRTOS任务调度有抢占式(pre-emptive)和合作式(co-operative)两种方式，一般使用<strong>基于任务优先级的抢占式任务调度方法</strong>。下面使用抢占式任务调度方法为例。</p>
 <ol>
 <li><strong>就绪状态</strong></li>
@@ -978,27 +1039,29 @@
 <li>如果就绪任务的优先级低于当前任务的优先级，处于就绪状态的任务无法获得CPU使用权，继续处于就绪状态。</li>
 </ul>
 <p>就绪的任务获取CPU的使用权，进入运行状态，这个过程称为切入(switch in)。相应的，处于运行状态的任务被调度器调度为就绪状态，这个过程称为切出(switch out)。</p>
-<ol>
+<ol start="2">
 <li><strong>运行状态</strong></li>
 </ol>
 <p>在单核处理器上，占有CPU运行的任务就处于运行状态。处于运行状态的高优先级任务如果一直运行，将一直占用CPU，在任务调度时，低优先级的就绪任务就无法获得CPU的使用权，无法实现多任务的运行。因此，<strong>处于运行状态的任务，应该在空闲时让出CPU的使用权。</strong></p>
 <p>处于就绪状态的任务，有两种方式可以让出CPU使用权的方法，<strong>一种是执行函数<code>vTaskSuspend()</code>进入挂起状态，另一种是执行阻塞式函数进入阻塞状态</strong>。这两种状态都是非运行状态，运行的状态就交出了CPU的使用权，任务调度器可以使其他就绪状态的任务进入运行状态。</p>
-<ol>
+<ol start="3">
 <li><strong>阻塞状态</strong></li>
 </ol>
 <p><strong>阻塞(blocked)状态就是任务暂时让出CPU的使用权，处于等待的状态</strong>。运行状态的任务可以调用两类函数进入阻塞状态。</p>
 <p>一类是时间延迟函数，如<code>vTaskDelay()</code>或<code>vTaskDelayUntil()</code>。处于运行状态的任务调用这类函数之后，就进入阻塞状态，并延迟指定时间。<strong>延迟时间到了之后，就又进入就绪状态，参与任务调度之后，又可以进入运行状态。</strong></p>
 <p>另一类是用于进程间通信的事件请求函数，例如，请求信号量的函数<code>xSemaphoreTake()</code>。处于运行状态的任务执行函数<code>xSemaphoreTake()</code>后，就进入阻塞状态，如果其他任务释放了信号量，或等待的超时时间到了，任务就从阻塞状态进入就绪状态。</p>
 <p>在运行状态的任务中调用函数<code>vTaskSuspend()</code>，可以间一个处于阻塞状态的任务转入挂起状态。</p>
-<ol>
+<ol start="4">
 <li><strong>挂起状态</strong></li>
 </ol>
 <p><strong>挂起(suspended)状态的任务就是暂停的任务，不参与调度器的调度</strong>。其他3种状态的任务都可以通过<code>vTaskSuspend()</code>进入挂起状态。<strong>处于挂起状态的任务不能自动退出挂起状态，需要在其他任务里调用函数<code>vTaskResume()</code>，才能使一个挂起的任务变为就绪状态。</strong></p>
-<h4 id="4-1-3-任务的优先级"><a href="#4-1-3-任务的优先级" class="headerlink" title="4.1.3 任务的优先级"></a>4.1.3 任务的优先级</h4><p>在FreeRTOS中，每个任务都必须设置一个优先级。总的优先级个数由文件<code>FreeRTOSConfig.h</code>中的宏<code>configAX_PRIORITIES</code>定义，默认值是56。<strong>优先级数字越小，优先级越低，所以最低优先级是0</strong>，在任务运行起来后，还可以修改优先级。多个任务可以具有相同的优先级。</p>
+<h4 id="4-1-3-任务的优先级"><a class="header-anchor" href="#4-1-3-任务的优先级">¶</a>4.1.3 任务的优先级</h4>
+<p>在FreeRTOS中，每个任务都必须设置一个优先级。总的优先级个数由文件<code>FreeRTOSConfig.h</code>中的宏<code>configAX_PRIORITIES</code>定义，默认值是56。<strong>优先级数字越小，优先级越低，所以最低优先级是0</strong>，在任务运行起来后，还可以修改优先级。多个任务可以具有相同的优先级。</p>
 <p>另外，参数<code>configMAX_PRIORITIES</code>可设置的最大值，以及调度器决定那个就绪任务进入运行状态，还与参<code>configUSE_PORT_OPTIMISED_TASK_SELECTION</code>的取值有关。根据这个参数的取值，任务调度器有两种方法。</p>
 <p>(1) 通用方法。<strong>若<code>configUSE_PORT_OPTIMISED_TASK_SELECTION</code>设置为0，则为通用方法</strong>。通用方法是使用C语言实现的，可以在所有的FreeRTOS移植版本上使用，<code>configMAX_PRIORITIES</code>的最大值页不受限制。</p>
 <p>(2) 架构优化的方法。<code>configUSE_PORT_OPTIMISED_TASK_SELECTION</code>设置为1，则为架构优化方法，部分代码是用汇编语言写的，运行速度比通用方法快。使用架构优化方法时，<code>configMAX_PRIORITIES</code>的最大值不能超过32。<strong>在使用Cortex-M0架构或CMSIS-RTOS V2接口时，不能使用架构优化方法。</strong></p>
-<h4 id="4-1-4-空闲任务"><a href="#4-1-4-空闲任务" class="headerlink" title="4.1.4 空闲任务"></a>4.1.4 空闲任务</h4><p>在main()函数中，调用<code>osKernelStart()</code>启动FreeRTOS的任务调度器时，FreeRTOS会自动创建一个空闲任务(idle task)，空闲任务的优先级为0，也就是最低优先级。</p>
+<h4 id="4-1-4-空闲任务"><a class="header-anchor" href="#4-1-4-空闲任务">¶</a>4.1.4 空闲任务</h4>
+<p>在main()函数中，调用<code>osKernelStart()</code>启动FreeRTOS的任务调度器时，FreeRTOS会自动创建一个空闲任务(idle task)，空闲任务的优先级为0，也就是最低优先级。</p>
 <p><strong>在FreeRTOS中，任何时候都需要有一个任务占用CPU，处于运行状态</strong>。如果用户创建的任务都不处于运行状态，空闲任务就占用CPU处于运行状态。</p>
 <p>空闲任务是比较重要的。与空闲任务相关的配置函数有如下几个：</p>
 <ul>
@@ -1006,9 +1069,10 @@
 <li><code>configIDLE_SHOULD_YIELD</code>：空闲任务是否对同等优先级的用户任务主动让出CPU使用权。</li>
 <li><code>configUSE_TICKLESS_IDLE</code>：是否使用tickless低功耗模式，若设置为1，可以实现系统的低功耗。</li>
 </ul>
-<h4 id="4-1-5-基础时钟与滴答信号"><a href="#4-1-5-基础时钟与滴答信号" class="headerlink" title="4.1.5 基础时钟与滴答信号"></a>4.1.5 基础时钟与滴答信号</h4><p>FreeRTOS自动采用S有sTick定时器作为FreeRTOS的基础时钟。SysTick定时器只有定时器中断功能，其定时频率由参数<code>configTICK_RATE_HZ</code>指定，默认值为1000，也就是1ms中断一次。</p>
+<h4 id="4-1-5-基础时钟与滴答信号"><a class="header-anchor" href="#4-1-5-基础时钟与滴答信号">¶</a>4.1.5 基础时钟与滴答信号</h4>
+<p>FreeRTOS自动采用S有sTick定时器作为FreeRTOS的基础时钟。SysTick定时器只有定时器中断功能，其定时频率由参数<code>configTICK_RATE_HZ</code>指定，默认值为1000，也就是1ms中断一次。</p>
 <p>在FreeRTOS中有一个全局变量<code>xTickCount</code>，在SysTick每次中断时，这个变量加1，也就是1ms变化一次。所谓的FreeRTOS滴答信号，就是指全局变量<code>xTickCount</code>的值发生变化的值，延时函数<code>vTaskDelay()</code>和<code>vTaskDelayUntil()</code>就是通过滴答信号实现毫秒延时的。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">林守拙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">林守拙的个人空间</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/FreeRTOS/">FreeRTOS</a><a class="post-meta__tags" href="/tags/STM32/">STM32</a></div><div class="post_share"><div class="social-share" data-image="/img/bingbing2_corrosion_port.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="电力电子技术"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">电力电子技术</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">I2C总线与通信协议</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-31</div><div class="title">I2C总线与通信协议</div></div></a></div><div><a href="/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/" title="双环控制PID算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-27</div><div class="title">双环控制PID算法</div></div></a></div><div><a href="/2023/07/21/modbus-blog/" title="modbus-blog"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-21</div><div class="title">modbus-blog</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/bingbing2_corrosion_port.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">林守拙</div><div class="author-info__description">抱朴守拙，行稳致远</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KeyL-SJ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KeyL-SJ" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-text">FreeRTOS学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">1、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.1 任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">1.2 任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%BB%BB%E5%8A%A1%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">1.3 任务优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%86%85%E6%A0%B8%E9%85%8D%E7%BD%AE"><span class="toc-text">1.4 内核配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81CubeMX%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0LED%E7%81%AF%E7%BF%BB%E8%BD%AC"><span class="toc-text">2、CubeMX项目配置实现LED灯翻转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-text">2.1、程序分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E4%B8%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">2.1.1. 主程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-FreeRTOS%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%BB%E5%8A%A1%E5%88%9B%E5%BB%BA"><span class="toc-text">2.1.2. FreeRTOS对象初始化函数和任务创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E7%BC%96%E5%86%99%E4%BB%BB%E5%8A%A1%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">2.1.3. 编写任务功能实现代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81FreeRTOS%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%84%E6%88%90%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">3、FreeRTOS的文件组成和基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-FreeRTOS%E6%96%87%E4%BB%B6%E7%BB%84%E6%88%90"><span class="toc-text">3.1 FreeRTOS文件组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-FreeRTOS%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.1 FreeRTOS通用功能文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-FreeRTOS%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.2 FreeRTOS通用定义文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-CMSIS-RTOS%E6%A0%87%E5%87%86%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.3 CMSIS-RTOS标准接口文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3%E7%9A%84%E7%A7%BB%E6%A4%8D%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.4 硬件相关的移植文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-FreeRTOS%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99"><span class="toc-text">3.2 FreeRTOS的编码规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%8F%98%E9%87%8F%E5%90%8D"><span class="toc-text">3.2.1 变量名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E5%87%BD%E6%95%B0%E5%90%8D"><span class="toc-text">3.2.2 函数名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%AE%8F%E5%90%8D%E7%A7%B0"><span class="toc-text">3.2.3 宏名称</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-FreeRTOS%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E5%8A%9F%E8%83%BD%E8%A3%81%E5%89%AA"><span class="toc-text">3.3 FreeRTOS的配置和功能裁剪</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-config%E7%B1%BB%E7%9A%84%E5%AE%8F"><span class="toc-text">3.3.1 config类的宏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-INCLUDE-%E7%B1%BB%E7%9A%84%E5%AE%8F"><span class="toc-text">3.3.2 INCLUDE_类的宏</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81FreeRTOS%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">4、FreeRTOS的任务管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-text">4.1 任务相关的一些概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6"><span class="toc-text">4.1.1 多任务运行基本机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-text">4.1.2 任务的状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">4.1.3 任务的优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%E7%A9%BA%E9%97%B2%E4%BB%BB%E5%8A%A1"><span class="toc-text">4.1.4 空闲任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%E5%9F%BA%E7%A1%80%E6%97%B6%E9%92%9F%E4%B8%8E%E6%BB%B4%E7%AD%94%E4%BF%A1%E5%8F%B7"><span class="toc-text">4.1.5 基础时钟与滴答信号</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="电力电子技术">电力电子技术</a><time datetime="2023-08-25T12:21:44.000Z" title="发表于 2023-08-25 20:21:44">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="FreeRTOS学习笔记">FreeRTOS学习笔记</a><time datetime="2023-08-16T14:07:49.000Z" title="发表于 2023-08-16 22:07:49">2023-08-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议">I2C总线与通信协议</a><time datetime="2023-07-31T14:27:51.000Z" title="发表于 2023-07-31 22:27:51">2023-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/" title="双环控制PID算法">双环控制PID算法</a><time datetime="2023-07-27T12:21:44.000Z" title="发表于 2023-07-27 20:21:44">2023-07-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/21/modbus-blog/" title="modbus-blog">modbus-blog</a><time datetime="2023-07-21T05:11:46.000Z" title="发表于 2023-07-21 13:11:46">2023-07-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 林守拙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">林守拙</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">林守拙的个人空间</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/FreeRTOS/">FreeRTOS</a><a class="post-meta__tags" href="/tags/STM32/">STM32</a></div><div class="post_share"><div class="social-share" data-image="/img/bingbing2_corrosion_port.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/08/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="电力电子技术"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">电力电子技术</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">I2C总线与通信协议</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/21/modbus-blog/" title="modbus-blog"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-21</div><div class="title">modbus-blog</div></div></a></div><div><a href="/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/" title="双环控制PID算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-27</div><div class="title">双环控制PID算法</div></div></a></div><div><a href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-31</div><div class="title">I2C总线与通信协议</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/loading.gif" data-original="/img/bingbing2_corrosion_port.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">林守拙</div><div class="author-info__description">抱朴守拙，行稳致远</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KeyL-SJ"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KeyL-SJ" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">FreeRTOS学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-text">1、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%BB%E5%8A%A1"><span class="toc-text">1.1 任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E4%BB%BB%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">1.2 任务状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%BB%BB%E5%8A%A1%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">1.3 任务优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%86%85%E6%A0%B8%E9%85%8D%E7%BD%AE"><span class="toc-text">1.4 内核配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81CubeMX%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0LED%E7%81%AF%E7%BF%BB%E8%BD%AC"><span class="toc-text">2、CubeMX项目配置实现LED灯翻转</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E3%80%81%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-text">2.1、程序分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E4%B8%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">2.1.1. 主程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-2-FreeRTOS%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%BB%E5%8A%A1%E5%88%9B%E5%BB%BA"><span class="toc-text">2.1.2. FreeRTOS对象初始化函数和任务创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-3-%E7%BC%96%E5%86%99%E4%BB%BB%E5%8A%A1%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">2.1.3. 编写任务功能实现代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81FreeRTOS%E7%9A%84%E6%96%87%E4%BB%B6%E7%BB%84%E6%88%90%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">3、FreeRTOS的文件组成和基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-FreeRTOS%E6%96%87%E4%BB%B6%E7%BB%84%E6%88%90"><span class="toc-text">3.1 FreeRTOS文件组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-FreeRTOS%E9%80%9A%E7%94%A8%E5%8A%9F%E8%83%BD%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.1 FreeRTOS通用功能文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-2-FreeRTOS%E9%80%9A%E7%94%A8%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.2 FreeRTOS通用定义文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-3-CMSIS-RTOS%E6%A0%87%E5%87%86%E6%8E%A5%E5%8F%A3%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.3 CMSIS-RTOS标准接口文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-4-%E7%A1%AC%E4%BB%B6%E7%9B%B8%E5%85%B3%E7%9A%84%E7%A7%BB%E6%A4%8D%E6%96%87%E4%BB%B6"><span class="toc-text">3.1.4 硬件相关的移植文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-FreeRTOS%E7%9A%84%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99"><span class="toc-text">3.2 FreeRTOS的编码规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E5%8F%98%E9%87%8F%E5%90%8D"><span class="toc-text">3.2.1 变量名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E5%87%BD%E6%95%B0%E5%90%8D"><span class="toc-text">3.2.2 函数名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%AE%8F%E5%90%8D%E7%A7%B0"><span class="toc-text">3.2.3 宏名称</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-FreeRTOS%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E5%8A%9F%E8%83%BD%E8%A3%81%E5%89%AA"><span class="toc-text">3.3 FreeRTOS的配置和功能裁剪</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-config%E7%B1%BB%E7%9A%84%E5%AE%8F"><span class="toc-text">3.3.1 config类的宏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-INCLUDE-%E7%B1%BB%E7%9A%84%E5%AE%8F"><span class="toc-text">3.3.2 INCLUDE_类的宏</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81FreeRTOS%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">4、FreeRTOS的任务管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%BB%BB%E5%8A%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-text">4.1 任务相关的一些概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%90%E8%A1%8C%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6"><span class="toc-text">4.1.1 多任务运行基本机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-text">4.1.2 任务的状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-3-%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">4.1.3 任务的优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-%E7%A9%BA%E9%97%B2%E4%BB%BB%E5%8A%A1"><span class="toc-text">4.1.4 空闲任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-%E5%9F%BA%E7%A1%80%E6%97%B6%E9%92%9F%E4%B8%8E%E6%BB%B4%E7%AD%94%E4%BF%A1%E5%8F%B7"><span class="toc-text">4.1.5 基础时钟与滴答信号</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" title="电力电子技术">电力电子技术</a><time datetime="2023-08-25T12:21:44.000Z" title="发表于 2023-08-25 20:21:44">2023-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="FreeRTOS学习笔记">FreeRTOS学习笔记</a><time datetime="2023-08-16T14:07:49.000Z" title="发表于 2023-08-16 22:07:49">2023-08-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/31/I2C%E6%80%BB%E7%BA%BF%E4%B8%8E%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" title="I2C总线与通信协议">I2C总线与通信协议</a><time datetime="2023-07-31T14:27:51.000Z" title="发表于 2023-07-31 22:27:51">2023-07-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/27/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6PID%E7%AE%97%E6%B3%95/" title="双环控制PID算法">双环控制PID算法</a><time datetime="2023-07-27T12:21:44.000Z" title="发表于 2023-07-27 20:21:44">2023-07-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/21/modbus-blog/" title="modbus-blog">modbus-blog</a><time datetime="2023-07-21T05:11:46.000Z" title="发表于 2023-07-21 13:11:46">2023-07-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 林守拙</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div>
         <style>
             [bg-lazy] {
                 background-image: none !important;
