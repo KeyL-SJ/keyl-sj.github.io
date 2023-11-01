@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>嵌入式软件开发基础知识</title>
+      <link href="/2023/11/01/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <url>/2023/11/01/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、C语言基础"><a href="#一、C语言基础" class="headerlink" title="一、C语言基础"></a>一、C语言基础</h2><h3 id="1、-基本语法"><a href="#1、-基本语法" class="headerlink" title="1、 基本语法"></a>1、 基本语法</h3><h4 id="1-1-while与do-while的区别"><a href="#1-1-while与do-while的区别" class="headerlink" title="1.1 while与do while的区别"></a>1.1 while与do while的区别</h4><ul><li><p>while循环在执行循环体内容之前会进行条件判断，若条件满足，则才会不断执行循环体内的内容，直到条件不满足或者遇到break语句。</p></li><li><p>do while会先执行一次循环体的内容，之后再进行条件判断，若条件满足，则继续不断执行循环体内的内容。</p></li></ul><h4 id="1-2-数据基本类型"><a href="#1-2-数据基本类型" class="headerlink" title="1.2 数据基本类型"></a>1.2 数据基本类型</h4><p><img src="C数据类型.png" alt="C数据类型"></p><h5 id="1-整型"><a href="#1-整型" class="headerlink" title="1. 整型"></a>1. 整型</h5><p>整型分为<strong>整形常量</strong>和整形变量，常量就是我们平时所看到的准确的数字，例如：1、20、333等等，变量则按我的理解是我向内存去申请一个存储空间，告诉内存空间我申请了这个地方用来存放一个整形的数据，但是什么时候放并没有直接确定。一般占4个字节（32位），最高位代表符号，0表示正数，1表示负数，取值是-2147483648~2147483647（-2^31^ ~ 2^31^-1），<strong>在内存中的存储顺序是低位在前、高位在后</strong>，例如0x12345678。</p><ul><li><p><strong>短整型 short</strong>，内存中占2个字节(2 Bytes)，是short int 的简写。取值范围：-32768 ~ + 32767 (-2^15^ ~ 2^15^-1)。</p></li><li><p><strong>整型int</strong>，内存中占4个字节(4 Bytes)，是long int的简写。取值范围：-2147483648 ~ +2147483647(-2^31^ ~ 2^31^)。</p></li><li><p><strong>长整型long long</strong>，32位平台下long 是4个字节，long long 是8字节；但是64位平台下则全是8字节。<strong>因此为了保证平台的通用性，程序中尽量不要使用long数据类型。</strong></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>FreeRTOS学习笔记</title>
       <link href="/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2023/08/16/FreeRTOS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
